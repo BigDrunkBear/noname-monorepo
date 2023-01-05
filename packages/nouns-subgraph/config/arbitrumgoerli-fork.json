@@ -1,0 +1,15 @@
+{
+  "network": "arbitrum-goerli",
+  "nounsToken": {
+    "address": "0x2E4de399180E57d5faF23129d52156D15E634C1e",
+    "startBlock": 2996956
+  },
+  "nounsAuctionHouse": {
+    "address": "0x26fda2fc5998651568CeDA43d74F2D0Db1a3554C",
+    "startBlock": 2997035
+  },
+  "nounsDAO": {
+    "address": "0x5AF50EE884119ac223D63bfAEa1dbb7F627A17a9",
+    "startBlock": 2997134
+  }
+}
