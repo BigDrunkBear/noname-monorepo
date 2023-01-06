@@ -171,3 +171,25 @@
   margin: 0;
   padding: 0;
 }
+
+.infoButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  /* text-decoration: underline; */
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+.infoButton:disabled {
+  color: #8c8d92;
+  text-decoration: none;
+  cursor: default;
+}
+
+.infoButton:hover,
+.infoButton:hover {
+  text-decoration: none;
+  color: rgb(95, 95, 95);
+  opacity: 1;
+} 

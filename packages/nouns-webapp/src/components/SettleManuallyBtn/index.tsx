@@ -53,10 +53,10 @@ const SettleManuallyBtn: React.FC<{
   const mins = timerDuration.minutes();
 
   return (
-    <p className={classes.emergencySettleWrapper}>
+    <p className={classes.voteForNextNounBtnWrapper}>
       <button
         onClick={settleAuctionHandler}
-        className={classes.emergencySettleButton}
+        className={classes.bidBtnAuctionEnded}
         disabled={!settleEnabled}
       >
         {settleEnabled ? (

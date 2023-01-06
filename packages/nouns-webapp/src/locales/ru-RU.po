@@ -57,15 +57,15 @@ msgstr "<0> Noun {0} </0> won by <1><2/></1>"
 
 #: src/components/ByLineHoverCard/index.tsx
 msgid "<0>Delegated Noun: </0>"
-msgstr "<0>Delegated Noun: </0>"
+msgstr "<0>Делегированный Noun: </0>"
 
 #: src/components/ByLineHoverCard/index.tsx
 msgid "<0>Delegated Nouns: </0>"
-msgstr "<0>Delegated Nouns: </0>"
+msgstr "<0>Делегированные Nouns: </0>"
 
 #: src/components/ProposalHeader/index.tsx
 msgid "<0>Proposed by: </0><1>{proposer}</1><2>{proposedAtTransactionHash}</2>"
-msgstr "<0>Proposed by: </0><1>{proposer}</1><2>{proposedAtTransactionHash}</2>"
+msgstr "<0>Предложенный: </0><1>{proposer}</1><2>{proposedAtTransactionHash}</2>"
 
 #: src/components/ProposalActionsModal/steps/SelectProposalActionStep/index.tsx
 msgid "<0>Supported Action Types:</0><1/><2>• Transfer Funds: </2>Send a fixed amount of ETH or USDC.<3/><4>• Function Call: </4>Call a contract function."
@@ -74,16 +74,16 @@ msgstr "<0>Supported Action Types:</0><1/><2>• Transfer Funds: </2>Send a fixe
 #: src/components/NounProfileVoteRow/index.tsx
 #: src/components/profileEvent/eventData/ProposalVoteHeadline/index.tsx
 msgid "Absent for"
-msgstr "Absent for"
+msgstr "Отсутствующий для"
 
 #: src/components/VoteCard/index.tsx
 #: src/components/VoteModal/index.tsx
 msgid "Abstain"
-msgstr "Abstain"
+msgstr "Воздержаться"
 
 #: src/components/VoteModal/index.tsx
 #~ msgid "Abstain from voting on Prop {0}"
-#~ msgstr "Abstain from voting on Prop {0}"
+#~ msgstr "Воздержаться от голосования по предложению {0}"
 
 #: src/components/NounProfileVoteRow/index.tsx
 msgid "Abstained on"
@@ -92,13 +92,13 @@ msgstr "Abstained on"
 #: src/components/ExploreGrid/ExploreNounDetail/index.tsx
 #: src/pages/Playground/index.tsx
 msgid "Accessory"
-msgstr "Accessory"
+msgstr "Аксессуар"
 
 #: src/components/NounProfileVoteRow/index.tsx
 #: src/components/ProposalStatus/index.tsx
 #: src/components/ProposalStatusCopy/index.tsx
 msgid "Active"
-msgstr "Active"
+msgstr "Активный"
 
 #: src/components/ProfileActivityFeed/index.tsx
 #: src/components/ProfileActivityFeed/index.tsx
@@ -108,20 +108,20 @@ msgstr "Activity"
 #: src/components/ProposalActionsModal/steps/FunctionCallReviewStep/index.tsx
 #: src/pages/CreateProposal/index.tsx
 msgid "Add Action"
-msgstr "Add Action"
+msgstr "Добавить действие"
 
 #: src/components/ProposalActionsModal/steps/SelectProposalActionStep/index.tsx
 msgid "Add Action Details"
-msgstr "Add Action Details"
+msgstr "Добавить сведения о действии"
 
 #: src/components/ProposalActionsModal/steps/FunctionCallSelectFunctionStep/index.tsx
 msgid "Add Arguments"
-msgstr "Add Arguments"
+msgstr "Добавить аргументы"
 
 #: src/components/ProposalActionsModal/steps/FunctionCallEnterArgsStep/index.tsx
 #: src/components/ProposalActionsModal/steps/FunctionCallSelectFunctionStep/index.tsx
 msgid "Add Function Call Arguments"
-msgstr "Add Function Call Arguments"
+msgstr "Добавление аргументов вызова функции"
 
 #: src/components/ProposalActionsModal/steps/SelectProposalActionStep/index.tsx
 msgid "Add Proposal Action"

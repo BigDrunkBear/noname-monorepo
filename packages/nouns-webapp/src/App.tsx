@@ -16,23 +16,19 @@ import GovernancePage from './pages/Governance';
 import CreateProposalPage from './pages/CreateProposal';
 import VotePage from './pages/Vote';
 import NoundersPage from './pages/Nounders';
-import ExplorePage from './pages/Explore';
 import NounersPage from './pages/Nouners';
 import Nouniverse from './pages/Nouniverse';
 import NotFoundPage from './pages/NotFound';
-import Playground from './pages/Playground';
 import { CHAIN_ID } from './config';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { AvatarProvider } from '@davatar/react';
 import dayjs from 'dayjs';
 import DelegatePage from './pages/DelegatePage';
-//import { getDefaultProvider } from 'ethers';
 
 function App() {
   const { account, chainId, library } = useEthers();
   const dispatch = useAppDispatch();
   dayjs.extend(relativeTime);
-  //const providerGoerli = getDefaultProvider('goerli')
 
   useEffect(() => {
     // Local account array updated
@@ -66,13 +62,11 @@ function App() {
               render={props => <AuctionPage initialAuctionId={Number(props.match.params.id)} />}
             />
             <Route exact path="/nounders" component={NoundersPage} />
-	    <Route exact path="/lilnouners" component={NounersPage} />
+	          <Route exact path="/lilnouners" component={NounersPage} />
             <Route exact path="/create-proposal" component={CreateProposalPage} />
             <Route exact path="/vote" component={GovernancePage} />
             <Route exact path="/vote/:id" component={VotePage} />
-            <Route exact path="/playground" component={Playground} />
             <Route exact path="/delegate" component={DelegatePage} />
-            <Route exact path="/explore" component={ExplorePage} />
             <Route exact path="/nouniverse/:id" component={Nouniverse} />
             <Route exact path="/nouniverse" component={Nouniverse} />
             <Route component={NotFoundPage} />

@@ -17,6 +17,9 @@ import SettleManuallyBtn from '../SettleManuallyBtn';
 import { Trans } from '@lingui/macro';
 import { useActiveLocale } from '../../hooks/useActivateLocale';
 import responsiveUiUtilsClasses from '../../utils/ResponsiveUIUtils.module.css';
+import InfoModal from '../InfoModal';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
 const computeMinimumNextBid = (
   currentBid: BigNumber,
@@ -196,6 +199,15 @@ const Bid: React.FC<{
     }
   }, [placeBidState, auctionEnded, setModal]);
 
+  //TODO: Refactor Modal to utilitse new modal design
+  const [showBidHistoryModal, setShowBidHistoryModal] = useState(false);
+  const showBidModalHandler = () => {
+    setShowBidHistoryModal(true);
+  };
+  const dismissBidModalHanlder = () => {
+    setShowBidHistoryModal(false);
+  };
+
   // settle auction transaction state hook
   useEffect(() => {
     switch (auctionEnded && settleAuctionState.status) {
@@ -240,15 +252,13 @@ const Bid: React.FC<{
   const isDisabled =
     placeBidState.status === 'Mining' || settleAuctionState.status === 'Mining' || !activeAccount;
 
-  const fomoNounsBtnOnClickHandler = () => {
-    // Open Fomo Nouns in a new tab
-    window.open('https://fomonouns.wtf', '_blank')?.focus();
-  };
 
   const isWalletConnected = activeAccount !== undefined;
 
   return (
     <>
+      {showBidHistoryModal && <InfoModal onDismiss={dismissBidModalHanlder} />}
+
       {showConnectModal && activeAccount === undefined && (
         <WalletConnectModal onDismiss={hideModalHandler} />
       )}
@@ -282,29 +292,54 @@ const Bid: React.FC<{
           </>
         )}
         {!auctionEnded ? (
-          <Button
-            className={auctionEnded ? classes.bidBtnAuctionEnded : classes.bidBtn}
-            onClick={auctionEnded ? settleAuctionHandler : placeBidHandler}
-            disabled={isDisabled}
-          >
-            {bidButtonContent.loading ? <Spinner animation="border" /> : bidButtonContent.content}
-          </Button>
+	        <>
+            <Button
+              className={auctionEnded ? classes.bidBtnAuctionEnded : classes.bidBtn}
+              onClick={auctionEnded ? settleAuctionHandler : placeBidHandler}
+              disabled={isDisabled}
+            >
+              {bidButtonContent.loading ? <Spinner animation="border" /> : bidButtonContent.content}
+            </Button>
+	        </>
         ) : (
           <>
-            <Col lg={12} className={classes.voteForNextNounBtnWrapper}>
-              <Button className={classes.bidBtnAuctionEnded} onClick={fomoNounsBtnOnClickHandler}>
-                <Trans>Vote for the next Noun</Trans> ⌐◧-◧
-              </Button>
-            </Col>
             {/* Only show force settle button if wallet connected */}
-            {isWalletConnected && (
-              <Col lg={12}>
-                <SettleManuallyBtn settleAuctionHandler={settleAuctionHandler} auction={auction} />
-              </Col>
-            )}
+	          {isWalletConnected ? (
+	            <Col lg={12}>
+		            <SettleManuallyBtn
+		            settleAuctionHandler={settleAuctionHandler}
+		            auction={auction}
+		            />
+
+		            <button onClick={showBidModalHandler} className={classes.infoButton}>
+		            <FontAwesomeIcon icon={faInfoCircle} />
+		            {` bidding and settling`}
+		            </button>
+	            </Col>
+	          ) : (
+	            <>
+		            <Col lg={12}>
+		              <button onClick={showBidModalHandler} className={classes.infoButton}>
+		              <FontAwesomeIcon icon={faInfoCircle} />
+		              {` bidding and settling`}
+		              </button>
+		            </Col>
+              </>
+	          )}
           </>
         )}
-      </InputGroup>
+	    </InputGroup>
+
+      {!auctionEnded ? (
+        <Col lg={11} style={{ paddingTop: '0.5em' }}>
+          <button onClick={showBidModalHandler} className={classes.infoButton}>
+            <FontAwesomeIcon icon={faInfoCircle} />
+            {` bidding and settling`}
+          </button>
+        </Col>
+      ) : (
+        <></>
+      )}
     </>
   );
 };
