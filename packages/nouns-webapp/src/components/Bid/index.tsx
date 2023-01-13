@@ -313,7 +313,7 @@ const Bid: React.FC<{
 
 		            <button onClick={showBidModalHandler} className={classes.infoButton}>
 		            <FontAwesomeIcon icon={faInfoCircle} />
-		            {` bidding and settling`}
+		            {` bidding and settling ⌐◧-◧`}
 		            </button>
 	            </Col>
 	          ) : (
@@ -321,7 +321,7 @@ const Bid: React.FC<{
 		            <Col lg={12}>
 		              <button onClick={showBidModalHandler} className={classes.infoButton}>
 		              <FontAwesomeIcon icon={faInfoCircle} />
-		              {` bidding and settling`}
+		              {` bidding and settling ⌐◧-◧`}
 		              </button>
 		            </Col>
               </>
@@ -334,7 +334,7 @@ const Bid: React.FC<{
         <Col lg={11} style={{ paddingTop: '0.5em' }}>
           <button onClick={showBidModalHandler} className={classes.infoButton}>
             <FontAwesomeIcon icon={faInfoCircle} />
-            {` bidding and settling`}
+            {` bidding and settling ⌐◧-◧`}
           </button>
         </Col>
       ) : (
